@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,11 +39,13 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Post> posts;
 
-    @Column(nullable = false)
-    private LocalDateTime fechaAlta;
+    @Column(nullable = false, updatable = false)
+    @CreationTimestamp
+    private LocalDateTime fechaCreacion;
 
     @Column(nullable = false)
-    private LocalDateTime fechaModificacion;
+    @UpdateTimestamp
+    private LocalDateTime fechaUltimaModificacion;
 
     public Usuario() {}
 

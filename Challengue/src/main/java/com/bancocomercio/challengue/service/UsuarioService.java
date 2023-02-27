@@ -2,6 +2,7 @@ package com.bancocomercio.challengue.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,10 @@ public class UsuarioService {
     public void eliminarUsuario(Long id) {
         usuarioRepository.deleteById(id);
     }
+
+	public Optional<Usuario> findById(Long id) {
+		// TODO Auto-generated method stub
+		return usuarioRepository.findById(id);
+	}
 }
 
