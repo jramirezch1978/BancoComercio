@@ -54,6 +54,17 @@ public class Usuario {
         this.fechaModificacion = LocalDateTime.now();
     }
 
+	public Usuario(long Id, String cellphone, String name, String lastName, String password, LocalDateTime now,
+			Object object) {
+		this.cellphone = cellphone;
+        this.name = name;
+        this.lastName = lastName;
+        this.password = password;
+        this.posts = new ArrayList<>();
+        this.fechaAlta = now;
+        this.fechaModificacion = LocalDateTime.now();
+	}
+
     // getters y setters
 }
 

@@ -41,6 +41,10 @@ public class Post {
         this.fechaModificacion = LocalDateTime.now();
     }
 
+	public Post(long l, String string, LocalDateTime now, LocalDateTime now2, Usuario usuario2) {
+		// TODO Auto-generated constructor stub
+	}
+
     // getters y setters
 }
 
